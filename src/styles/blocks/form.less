@@ -1,0 +1,52 @@
+.form {
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        row-gap: 30px;
+        column-gap: 60px;
+        &--mb50 {
+            margin-bottom: 50px;
+        }
+    }
+    &__group {
+        width: calc(50% - 30px);
+    }
+    &__field {
+        display: block;
+        width: 100%;
+        &--w50 {
+            width: calc(50% - 30px);
+        }
+        &--mb30 {
+            margin-bottom: 30px;
+        }
+    }
+
+    &__btn {
+        max-width: 400px;
+        width: 100%;
+    }
+
+    &__check {
+        &--mb40 {
+            margin-bottom: 40px;
+        }
+    }
+    &__close-btn {
+        margin: 0 auto;
+        padding: 4px 0;
+        border: none;
+        background: transparent;
+        color: @black;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 22px;
+        text-decoration: underline;
+        transition: color 0.2s;
+        margin-left: 133px;
+        &:hover {
+          color: @red;
+        }
+    }
+}
