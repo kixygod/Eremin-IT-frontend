@@ -1,74 +1,87 @@
-.check
-{
-  box-sizing: border-box;
-  position: relative;
-  padding-left: 40px;
-  display: block;
+.check {
+    box-sizing: border-box;
+    position: relative;
+    padding-left: 40px;
+    display: block;
 
-  &--red
-  {
-    color: @red;
-    .check__mark {
-      border-color: @red;
-    }
-    .check__input {
-      &:checked {
-        & ~ .check__mark {
-          background-color: @red;
+    &--red {
+        color: @red;
+        .check__mark {
+            border-color: @red;
         }
-      }
-    }
-  }
-  
-  &--disabled
-  {
-    pointer-events: none;
-    opacity: 0.5;
-  }
-
-  &__input
-  {
-    .is-hidden;
-
-    &:checked
-    {
-      &~.check__mark
-      {
-        background-color: @black;
-
-        &::after
-        {
-          content: '';
-          display: block;
-          position: absolute;
-          top: 5px;
-          left: 9px;
-          width: 6px;
-          height: 12px;
-          box-sizing: border-box;
-          border-bottom: 2px solid @white;
-          border-right: 2px solid @white;
-          transform: rotate(45deg);
+        .check__input {
+            &:checked {
+                & ~ .check__mark {
+                    background-color: @red;
+                }
+            }
         }
-      }
+        .check__label {
+            color: @red;
+        }
     }
-  }
 
-  &__mark
-  {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 24px;
-    height: 24px;
-    border: 1px solid @black;
-    background-color: transparent;
-    transition: background-color 0.2s;
-  }
+    &--disabled {
+        pointer-events: none;
+        opacity: 0.5;
+    }
 
-  &__label
-  {
-    font-size: 14px;
-    color: @black;
-  }
-}
+    label.error,
+    span.error {
+        position: absolute;
+        bottom: -25px;
+        color: @red;
+        display: block;
+        margin: 5px 0 0;
+    }
+
+    &__input {
+        .is-hidden;
+
+        &:checked {
+            & ~ .check__mark {
+                background-color: @black;
+                &::after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    top: 2px;
+                    left: 7px;
+                    width: 6px;
+                    height: 12px;
+                    border-bottom: 2px solid @white;
+                    border-right: 2px solid @white;
+                    transform: rotate(45deg);
+                }
+            }
+        }
+    }
+
+    &__mark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 24px;
+        height: 24px;
+        box-sizing: border-box;
+        border: 1px solid @black;
+        background-color: transparent;
+        transition: background-color 0.2s;
+    }
+
+     &__label {
+        font-size: 16px;
+        color: @black;
+        &--footer {
+            font-size: 14px;
+
+            @media @bw768 {
+                font-size: 12px;
+            }
+        }
+
+        @media @bw1340 {
+            font-size: 14px;
+        }
+     }
+ }

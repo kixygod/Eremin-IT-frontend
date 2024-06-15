@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html lang="ru">
-  
   @@include('blocks/head.html')
 
   <body>
-
     @@include('blocks/page-header.html')
 
     <main class="main">
@@ -12,38 +10,47 @@
         <header class="main-header home__main-header">
           <h1 class="main-header__title">Арт — пространство</h1>
 
-          <div class="main-header__picture">
-            <svg class="main-header__img" width="202" height="147">
-              <use xlink:href="assets/icons/symbols.svg#lenni"></use>
-            </svg>
-          </div>
+          <picture class="main-header__picture">
+            <img src="assets/images/lenni.png" class="main-header__img" alt="LENNI"/>
+          </picture>
           
           <p class="main-header__text">
-            Для людей, горящих сердцем и делом 
+            для людей, горящих сердцем и делом 
             место для настоящего
           </p>
         </header>
-        
-        @@include('blocks/offers.html', { class: 'home__offers' })
-        @@include('blocks/about.html', { class: 'home__about' })
-        @@include('blocks/upcoming.html', { class: 'home__upcoming' })
-        @@include('blocks/blog-listing.html', { class: 'home__blog-listing' })
-        @@include('blocks/contacts.html', { class: 'home__contacts' })
 
-        <div class="doit home__doit">
-          <p class="doit__text">
-            Просто делайте, что нравится, а мы вам поможем
-          </p>
+        <!-- <section class="offers home__offers"></section> -->
+        @@include('blocks/i-want.html', { class: 'i-want--mb200'})
+        @@include('blocks/about.html', { class: 'home__about' })
+        @@include('blocks/upcoming.html', { class: 'upcoming' })
+        @@include('blocks/blog-listing.html', {"class": "home__listing"})
+        @@include('blocks/contacts.html', { class: 'contacts' })
+        
+        <div class="home__doit">
+          <p class="home__doit-text1">Просто делайте, что нравится, </p>
+          <p class="home__doit-text11">Просто делайте,</p>
+          <p class="home__doit-text12">что нравится,</p>
+          <p class="home__doit-text2">а мы вам поможем</p>
         </div>
       </div>
     </main>
 
     @@include('blocks/page-footer.html')
-
     @@include('blocks/event-pp.html')
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHf8lds_UAQbMe0wisVxCrk"></script>
-    <script src="scripts/swiper.js"></script>
+    <script src="scripts/jquery-3.7.1.min.js"></script>
+    <script src="scripts/jquery.selectric.min.js"></script>
+    <script src="scripts/jquery.mask.min.js"></script>
+    <script src="scripts/air-datepicker.js"></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCvNbEdWyR7G9BDfCwo7ejHQWY6fsdwt6I"></script>
+
+    <script src="scripts/jquery.validate.min.js"></script>
+    <script src="scripts/jquery.validate-init.js"></script>
+    <script src="scripts/toastr.js"></script>
+    
+    <script src="scripts/swiper.min.js"></script>
     <script src="scripts/main.min.js"></script>
   </body>
 </html>
